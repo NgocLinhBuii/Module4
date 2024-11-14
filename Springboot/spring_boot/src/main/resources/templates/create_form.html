@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thêm mới sản phẩm</h1>
+<form th:action="@{/save}" method="post" th:object="${product}">
+    Tên sản phẩm: <input type="text" th:field="*{name}">
+    Giá sản phẩm: <input type="number" th:field="*{price}">
+    Loại sản phẩm:
+    <select th:field="*{category}">
+        <option th:each="c : ${categories}" th:value="${c.id}"
+                th:text ="${c.name}"></option>
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

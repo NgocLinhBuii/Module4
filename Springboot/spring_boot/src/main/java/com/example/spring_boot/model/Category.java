@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+//thực thể cha
 @Entity
 public class Category {
     @Id
